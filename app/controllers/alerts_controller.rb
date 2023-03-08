@@ -19,7 +19,10 @@ class AlertsController < ApplicationController
 
     def send_spam
         email = params[:Email]
+        puts "Email: #{email}"
         message = "Spam detected for email: #{email}"
         SLACK_NOTIFIER.ping message
+        payload = Payload.create(email: email)
+        puts "Payload: #{payload.inspect}"
     end
 end
