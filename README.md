@@ -5,20 +5,25 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby 2.7.4
+* Rails 7.0.4.2
 
-* System dependencies
+* To run this app:
 
-* Configuration
+* Fork and clone this repo to your local machine.
 
-* Database creation
+* Once the repo is clone, run 'bundle install'
 
-* Database initialization
+* In the 'slack_notifier.rb' replace the 'channel' and 'username' with your desired channel and username.
 
-* How to run the test suite
+* Create a file in the root directory, and add your webhook url to it. ex. SLACK_WEBHOOK = 'your_webhook_url'
 
-* Services (job queues, cache servers, search engines, etc.)
+* Start the server in the command line by running, 'rails s'
 
-* Deployment instructions
+* Use something like POSTMAN, to send the POST request to the endpoint 'http://localhost:3000/alerts' with the parameters 
+'content-type application/json'
 
-* ...
+* Once everything is set up, you will see messages to your slack channel that detects if an email sends spam alert, and also stores that email in the database.
+
+Thank you!
+
